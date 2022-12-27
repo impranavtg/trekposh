@@ -1,99 +1,55 @@
+import React, {useEffect} from 'react'
 import './App.css';
-import Navbar from './Components/Js/Navbar';
-import Land from "./Land.js";
-import Particles from "react-tsparticles";
-
+import Land from "./Pages/Landing/Js/Land";
+import {Routes,Route,useLocation,useNavigate} from "react-router-dom";
+import UserTrek from './Pages/Landing/Js/UserTrek';
+import UserArticles from './Pages/Landing/Js/UserArticles';
+import Login from './Pages/Admin/Js/Login';
+import Dashboard from './Pages/Admin/Js/Dashboard';
+import ADG from './Pages/Admin/Js/ADG';
+import ADT from './Pages/Admin/Js/ADT';
+import ADA from './Pages/Admin/Js/ADA';
+import { ToastContainer } from 'react-toastify';
  const App=()=> {
 
-  const particlesInit = (main) => {
-    // console.log(main);
-  };
 
-  const particlesLoaded = (container) => {
-    // console.log(container);
-  };
+
+  let navigate=useNavigate()
+  const location = useLocation();
+  useEffect(() => {
+      if((location.pathname==='/trekposh-admin' || location.pathname==='/trekposh-admin/admin-treks' || location.pathname==='/trekposh-admin/admin-gallary' || location.pathname==='/trekposh-admin/admin-articles')  && localStorage.getItem('token')===null){
+          navigate('/trekposh-admin/login');
+      }
+  }, [location.pathname])
 
   return (
     <>
-      <Particles 
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: true,
-              mode: "repulse",
-            },
-            onHover: {
-              enable: false,
-              mode: "connect",
-            },
-           // resize: true,
-          },
-          modes: {
-            bubble: {
-              distance: 400,
-              duration: 2,
-              opacity: 0.8,
-              size: 40,
-            },
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: "#FF5722",
-          },
-          links: {
-            color: "#00ADB5",
-            distance: 150,
-            enable: false,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            direction: "none",
-            enable: true,
-            outMode: "bounce",
-            random: false,
-            speed: 0.5,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
-            value: 80,
-          },
-          opacity: {
-            value: 0.5,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            random: true,
-            value: 5,
-          },
-        },
-        detectRetina: true,
-      }}
-    /> 
-    <Navbar/>
-    <Land/>
+     <ToastContainer
+      position="top-right"
+      autoClose={1500}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      />
+    <Routes>
+    <Route exact path="/" element={<Land/>} />       
+          <Route exact path="/treks" element={<UserTrek/>} />
+          <Route exact path="/articles" element={<UserArticles/>} />
+          {/* <Route exact path="/trekposh-admin/*" element={<AdminPage/>} /> */}
+          <Route exact path="/trekposh-admin/login" element={<Login/>} />
+          {localStorage.getItem('token') && 
+          <>
+         <Route exact path="/trekposh-admin" element={<Dashboard/>} />
+         <Route exact path="/trekposh-admin/admin-treks" element={<ADT/>} />
+         <Route exact path="/trekposh-admin/admin-gallary" element={<ADG/>} />
+         <Route exact path="/trekposh-admin/admin-articles" element={<ADA/>} />
+         </>
+          }
+    </Routes>
     </>
   );
 }
