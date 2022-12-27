@@ -14,7 +14,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://trekposh.com">
+      <Link color="inherit" href="https://trekposh.pages.dev">
         trekposh.com
       </Link>{' '}
       {new Date().getFullYear()}
