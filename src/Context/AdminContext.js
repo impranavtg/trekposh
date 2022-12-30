@@ -32,7 +32,7 @@ const AdminContext = ({children}) => {
     }
   }
   const getTreks=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/treks/get-treks',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/treks/get-treks',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -43,7 +43,7 @@ const AdminContext = ({children}) => {
   }
 
   const getImages=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/images/get-images',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/images/get-images',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -54,7 +54,7 @@ const AdminContext = ({children}) => {
   }
 
   const getArticles=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/articles/get-articles',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/articles/get-articles',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -66,7 +66,7 @@ const AdminContext = ({children}) => {
 
 
   const addTrek=async(title,image,date,description,fullDesc)=>{
-    const response=await fetch('https://trekposh.onrender.com/api/treks/addtrek',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/treks/addtrek',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -80,7 +80,7 @@ const AdminContext = ({children}) => {
   }
 
   const addImage=async(image)=>{
-    const response=await fetch('https://trekposh.onrender.com/api/images/addimage',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/images/addimage',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -94,7 +94,7 @@ const AdminContext = ({children}) => {
   }
 
   const addAdmin=async(name,email,password)=>{
-    const response=await fetch('https://trekposh.onrender.com/api/auth/createuser',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/auth/createuser',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -107,7 +107,7 @@ const AdminContext = ({children}) => {
   }
 
   const addArticle=async(title,description)=>{
-    const response=await fetch('https://trekposh.onrender.com/api/articles/addArticle',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/articles/addArticle',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -121,7 +121,7 @@ const AdminContext = ({children}) => {
   }
 
   const editTrek=async(id,title,image,date,description,fullDesc)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/treks/update-trek/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/treks/update-trek/${id}`,{
       method:'PUT',
       headers:{
         'Content-Type':'application/json',
@@ -149,7 +149,7 @@ const AdminContext = ({children}) => {
   }
 
   const editImage=async(id,image)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/images/update-image/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/images/update-image/${id}`,{
       method:'PUT',
       headers:{
         'Content-Type':'application/json',
@@ -173,7 +173,7 @@ const AdminContext = ({children}) => {
   }
 
   const editArticle=async(id,title,description)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/articles/update-article/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/articles/update-article/${id}`,{
       method:'PUT',
       headers:{
         'Content-Type':'application/json',
@@ -198,7 +198,7 @@ const AdminContext = ({children}) => {
   }
 
   const deleteTrek=async(id)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/treks/deletetrek/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/treks/deletetrek/${id}`,{
       method:'DELETE',
       headers:{
         'authToken':localStorage.getItem('token')
@@ -214,7 +214,7 @@ const AdminContext = ({children}) => {
   }
 
   const deleteImage=async(id)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/images/deleteimage/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/images/deleteimage/${id}`,{
       method:'DELETE',
       headers:{
         'authToken':localStorage.getItem('token')
@@ -230,7 +230,7 @@ const AdminContext = ({children}) => {
   }
 
   const deleteArticle=async(id)=>{
-    const response=await fetch(`https://trekposh.onrender.com/api/articles//deletearticle/${id}`,{
+    const response=await fetch(`https://vast-cyan-hermit-crab-gear.cyclic.app/api/articles//deletearticle/${id}`,{
       method:'DELETE',
       headers:{
         'authToken':localStorage.getItem('token')

@@ -10,7 +10,7 @@ const UserContext = ({children}) => {
 
 
   const getTreks=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/treks/get-treks',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/treks/get-treks',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -21,7 +21,7 @@ const UserContext = ({children}) => {
   }
 
   const getImages=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/images/get-images',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/images/get-images',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -32,7 +32,7 @@ const UserContext = ({children}) => {
   }
 
   const getArticles=async()=>{
-    const response=await fetch('https://trekposh.onrender.com/api/articles/get-articles',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/articles/get-articles',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',

@@ -19,7 +19,7 @@ const LoginContext = ({children}) => {
 
 
   const login=async(email,password)=>{
-    const response=await fetch('https://trekposh.onrender.com/api/auth/login',{
+    const response=await fetch('https://vast-cyan-hermit-crab-gear.cyclic.app/api/auth/login',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
